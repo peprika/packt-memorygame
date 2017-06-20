@@ -7,34 +7,25 @@
 
     <TextView
         android:id="@+id/scoreTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
         android:layout_marginTop="24dp"
         android:text="@string/scoreTitle"
         android:textSize="36sp"
-        tools:text="Score: 999"/>
+        tools:text="Score: 999"
+        style="@style/GameScreenTextviewStyle"/>
 
     <TextView
         android:id="@+id/difficultyTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-        android:gravity="center"
         android:text="@string/difficultyTitle"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        style="@style/GameScreenTextviewStyle"/>
 
     <TextView
         android:id="@+id/watchGoTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
         android:layout_marginBottom="24dp"
-        android:text="@string/watch"/>
+        android:text="@string/watch"
+        style="@style/GameScreenTextviewStyle"/>
 
     <Button
         android:id="@+id/button1"
