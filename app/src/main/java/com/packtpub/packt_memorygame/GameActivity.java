@@ -48,11 +48,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mButton2 = (Button)findViewById(R.id.button2);
         mButton3 = (Button)findViewById(R.id.button3);
         mButton4 = (Button)findViewById(R.id.button4);
+        mReplayButton = (Button)findViewById(R.id.replayButton);
 
         mButton1.setOnClickListener(this);
         mButton2.setOnClickListener(this);
         mButton3.setOnClickListener(this);
         mButton4.setOnClickListener(this);
+        mReplayButton.setOnClickListener(this);
 
         // Sound Effects
         // Make the soundpool according to build version
