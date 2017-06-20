@@ -5,4 +5,5 @@
 
     <string name="scoreTitle">Score: 000</string>
     <string name="difficultyTitle">Difficulty: X</string>
+    <string name="replay">Replay</string>
 </resources>
