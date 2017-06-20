@@ -57,6 +57,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         // Set the UI elements
         mScoreTitle = (TextView)findViewById(R.id.scoreTitle);
         mDifficultyTitle = (TextView)findViewById(R.id.difficultyTitle);
+        mTextWatchGo = (TextView)findViewById(R.id.watchGoTitle);
 
         mButton1 = (Button)findViewById(R.id.button1);
         mButton2 = (Button)findViewById(R.id.button2);
@@ -164,6 +165,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         isResponding = false;
         elementToPlay = 0;
         playerResponses = 0;
+        mTextWatchGo.setText(getResources().getString(R.string.watch));
         playSequence = true;
     }
 
@@ -174,6 +176,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mButton2.setVisibility(View.VISIBLE);
         mButton3.setVisibility(View.VISIBLE);
         mButton4.setVisibility(View.VISIBLE);
+        mTextWatchGo.setText(getResources().getString(R.string.go));
         isResponding = true;
     }
 }

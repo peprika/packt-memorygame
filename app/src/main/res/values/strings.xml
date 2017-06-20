@@ -6,6 +6,6 @@
     <string name="scoreTitle">Score: 000</string>
     <string name="difficultyTitle">Difficulty: X</string>
     <string name="replay">Replay</string>
-    <string name="watch">Watch</string>
+    <string name="watch">Watch!</string>
     <string name="go">Go!</string>
 </resources>
