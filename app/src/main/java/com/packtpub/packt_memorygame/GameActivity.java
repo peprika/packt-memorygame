@@ -1,5 +1,6 @@
 package com.packtpub.packt_memorygame;
 
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,6 +24,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     Button mButton3;
     Button mButton4;
     Button mReplayButton;
+
+    // Sound declarations
+    private SoundPool mSoundPool;
+    int sample1, sample2, sample3, sample4 = -1;
 
     @Override
     protected void onCreate(Bundle savedInstantState) {
