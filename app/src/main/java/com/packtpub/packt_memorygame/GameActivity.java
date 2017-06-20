@@ -6,6 +6,7 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -85,6 +86,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         } catch(IOException e) {
             // Catch exception here
         }
+
+        // Game logic variable declarations
+        private Handler mHandler;
+        int difficultyLevel = 1;
+        int [] sequenceToCopy = new int[100];
+        boolean playSequence = false;
+        int elementToPlay = 0;
+        int playerResponses;
+        int playerScore;
+        boolean isResponding;
+        
     }
 
 
