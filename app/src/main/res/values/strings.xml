@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Packt - MemoryGame</string>
     <string name="main_title">Memory Game</string>
-    <string name="play">Play</string>
+    <string name="play">New Game</string>
 </resources>
