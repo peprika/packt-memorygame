@@ -7,6 +7,7 @@ import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +36,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     // Sound declarations
     private SoundPool mSoundPool;
     int sample1, sample2, sample3, sample4 = -1;
+
+
+    // Game logic variable declarations
+    private Handler mHandler;
+    int difficultyLevel = 1;
+    int [] sequenceToCopy = new int[100];
+    final boolean playSequence = false;
+    int elementToPlay = 0;
+    int playerResponses;
+    int playerScore;
+    boolean isResponding;
 
     @Override
     protected void onCreate(Bundle savedInstantState) {
@@ -87,20 +99,21 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             // Catch exception here
         }
 
-        // Game logic variable declarations
-        private Handler mHandler;
-        int difficultyLevel = 1;
-        int [] sequenceToCopy = new int[100];
-        boolean playSequence = false;
-        int elementToPlay = 0;
-        int playerResponses;
-        int playerScore;
-        boolean isResponding;
-        
+        // Thread code
+        mHandler = new Handler() {
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+
+                if (playSequence) {
+                    // Thread action will go here
+                }
+
+                mHandler.sendEmptyMessageDelayed(0, 900);
+            }
+        };
+        mHandler.sendEmptyMessage(0);
     }
-
-
-
+    
     @Override
     public void onClick(View v) {
 
