@@ -43,7 +43,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private Handler mHandler;
     int difficultyLevel = 1;
     int [] sequenceToCopy = new int[100];
-    final boolean playSequence = false;
+    boolean playSequence = false;
     int elementToPlay = 0;
     int playerResponses;
     int playerScore;
@@ -129,5 +129,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             ourRandom++;
             sequenceToCopy[i] = ourRandom;
         }
+    }
+
+    // For starting the thread
+    public void playASequence() {
+        createSequence();
+        isResponding = false;
+        elementToPlay = 0;
+        playerResponses = 0;
+        playSequence = true;
     }
 }
