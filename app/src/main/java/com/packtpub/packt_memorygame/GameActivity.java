@@ -139,4 +139,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         playerResponses = 0;
         playSequence = true;
     }
+
+    // For finishing the thread
+    public void sequenceFinish() {
+        playSequence = false;
+        mButton1.setVisibility(View.VISIBLE);
+        mButton2.setVisibility(View.VISIBLE);
+        mButton3.setVisibility(View.VISIBLE);
+        mButton4.setVisibility(View.VISIBLE);
+        isResponding = true;
+    }
 }
