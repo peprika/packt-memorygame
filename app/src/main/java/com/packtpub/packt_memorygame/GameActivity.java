@@ -1,6 +1,8 @@
 package com.packtpub.packt_memorygame;
 
+import android.media.AudioManager;
 import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -33,7 +35,18 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstantState) {
         super.onCreate(savedInstantState);
         setContentView(R.layout.activity_game);
+
+        // Sound Effects
+        // Make the soundpool according to build version
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mSoundPool = new SoundPool.Builder()
+                    .setMaxStreams(10)
+                    .build();
+        } else {
+            mSoundPool = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
+        }
     }
+
 
     @Override
     public void onClick(View v) {
