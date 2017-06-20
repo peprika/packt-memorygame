@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.Random;
 
 /**
  * Created by Riku Pepponen on 20.6.2017.
@@ -113,9 +114,20 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         };
         mHandler.sendEmptyMessage(0);
     }
-    
+
     @Override
     public void onClick(View v) {
 
+    }
+
+    // Create a sequence the user has to copy
+    public void createSequence() {
+        Random randInt = new Random();
+        int ourRandom;
+        for(int i = 0; i < difficultyLevel; i++) {
+            ourRandom = randInt.nextInt(4);
+            ourRandom++;
+            sequenceToCopy[i] = ourRandom;
+        }
     }
 }
