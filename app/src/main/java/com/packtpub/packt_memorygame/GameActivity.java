@@ -3,6 +3,8 @@ package com.packtpub.packt_memorygame;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by Riku Pepponen on 20.6.2017.
@@ -10,6 +12,17 @@ import android.view.View;
  */
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
+
+    // UI declarations
+    TextView mScoreTitle;
+    TextView mDifficultyTitle;
+    TextView mTextWatchGo;
+
+    Button mButton1;
+    Button mButton2;
+    Button mButton3;
+    Button mButton4;
+    Button mReplayButton;
 
     @Override
     protected void onCreate(Bundle savedInstantState) {
