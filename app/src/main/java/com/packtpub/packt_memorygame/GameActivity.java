@@ -40,6 +40,20 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstantState);
         setContentView(R.layout.activity_game);
 
+        // Set the UI elements
+        mScoreTitle = (TextView)findViewById(R.id.scoreTitle);
+        mDifficultyTitle = (TextView)findViewById(R.id.difficultyTitle);
+
+        mButton1 = (Button)findViewById(R.id.button1);
+        mButton2 = (Button)findViewById(R.id.button2);
+        mButton3 = (Button)findViewById(R.id.button3);
+        mButton4 = (Button)findViewById(R.id.button4);
+
+        mButton1.setOnClickListener(this);
+        mButton2.setOnClickListener(this);
+        mButton3.setOnClickListener(this);
+        mButton4.setOnClickListener(this);
+
         // Sound Effects
         // Make the soundpool according to build version
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -70,6 +84,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             // Catch exception here
         }
     }
+
 
 
     @Override
