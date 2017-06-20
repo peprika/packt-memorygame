@@ -2,4 +2,7 @@
     <string name="app_name">Packt - MemoryGame</string>
     <string name="main_title">Memory Game</string>
     <string name="play">New Game</string>
+
+    <string name="scoreTitle">Score: 000</string>
+    <string name="difficultyTitle">Difficulty: X</string>
 </resources>

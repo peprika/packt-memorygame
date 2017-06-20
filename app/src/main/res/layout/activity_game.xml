@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/scoreTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="@string/scoreTitle"
+        android:textSize="36sp"
+        tools:text="Score: 999"/>
+
+    <TextView
+        android:id="@+id/difficultyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/difficultyTitle"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:text="1"
+        style="@style/GameScreenButtonStyle"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:text="2"
+        style="@style/GameScreenButtonStyle"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:text="3"
+        style="@style/GameScreenButtonStyle"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:text="4"
+        style="@style/GameScreenButtonStyle"/>
 </LinearLayout>
