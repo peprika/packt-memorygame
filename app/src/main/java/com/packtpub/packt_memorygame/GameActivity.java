@@ -145,8 +145,25 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-
+        // Only accept clicks when sequence is not playing
+        if(!playSequence) {
+            switch (v.getId()) {
+                case R.id.button1:
+                    mSoundPool.play(sample1, 1, 1, 0, 0, 1);
+                    break;
+                case R.id.button2:
+                    mSoundPool.play(sample2, 1, 1, 0, 0, 1);
+                    break;
+                case R.id.button3:
+                    mSoundPool.play(sample3, 1, 1, 0, 0, 1);
+                    break;
+                case R.id.button4:
+                    mSoundPool.play(sample4, 1, 1, 0, 0, 1);
+                    break;
+                }
+        }
     }
+
 
     // Create a sequence the user has to copy
     public void createSequence() {
