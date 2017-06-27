@@ -150,15 +150,19 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             switch (v.getId()) {
                 case R.id.button1:
                     mSoundPool.play(sample1, 1, 1, 0, 0, 1);
+                    checkElement(1);
                     break;
                 case R.id.button2:
                     mSoundPool.play(sample2, 1, 1, 0, 0, 1);
+                    checkElement(2);
                     break;
                 case R.id.button3:
                     mSoundPool.play(sample3, 1, 1, 0, 0, 1);
+                    checkElement(3);
                     break;
                 case R.id.button4:
                     mSoundPool.play(sample4, 1, 1, 0, 0, 1);
+                    checkElement(4);
                     break;
                 case R.id.replayButton:
                     difficultyLevel = 3;
@@ -202,4 +206,27 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mTextWatchGo.setText(getResources().getString(R.string.go));
         isResponding = true;
     }
+
+    public void checkElement(int thisElement) {
+
+        if(isResponding) {
+            playerResponses++;
+            if (sequenceToCopy[playerResponses-1] == thisElement) {
+                // Player clicks correctly
+                playerScore = playerScore + ((thisElement + 1) * 2);
+                mScoreTitle.setText("Score: " + playerScore);
+
+                if (playerResponses == difficultyLevel) {
+                    // Player got the whole sequence correct
+                    isResponding = false;
+                    difficultyLevel++;
+                    playASequence();
+                }
+            } else {
+                    mTextWatchGo.setText("FAILED!");
+                    isResponding = false;
+                }
+            }
+        }
+
 }
