@@ -160,6 +160,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 case R.id.button4:
                     mSoundPool.play(sample4, 1, 1, 0, 0, 1);
                     break;
+                case R.id.replayButton:
+                    difficultyLevel = 3;
+                    playerScore = 0;
+                    mScoreTitle.setText("Score: " + playerScore);
+                    playASequence();
+                    break;
                 }
         }
     }
