@@ -11,6 +11,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +37,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     Button mButton3;
     Button mButton4;
     Button mReplayButton;
+
+    Animation wobble;
 
     // Sound declarations
     private SoundPool mSoundPool;
@@ -79,6 +83,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mButton3.setOnClickListener(this);
         mButton4.setOnClickListener(this);
         mReplayButton.setOnClickListener(this);
+
+        wobble = AnimationUtils.loadAnimation(this, R.anim.wobble);
 
         // Initializations for high scores
         prefs = getSharedPreferences(dataName, MODE_PRIVATE);
