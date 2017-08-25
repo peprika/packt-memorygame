@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Declarations for high scores
     SharedPreferences prefs;
     String dataName = "MyData";
-    String intName = "Mystring";
+    String intName = "MyInt";
     int defaultInt = 0;
     public static int hiScore;
 
