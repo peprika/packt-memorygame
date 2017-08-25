@@ -24,6 +24,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initializations for high scores
+        prefs = getSharedPreferences(dataName, MODE_PRIVATE);
+        hiScore = prefs.getInt(intName, defaultInt);
+        TextView textHiScore = (TextView) findViewById(R.id.highScore);
+        textHiScore.setText("High Score: " + hiScore);
+
         mNewGameButton = (Button)findViewById(R.id.newGameButton);
         mNewGameButton.setOnClickListener(this);
     }
