@@ -1,5 +1,6 @@
 package com.packtpub.packt_memorygame;
 
+import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.AudioManager;
@@ -38,7 +39,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private SoundPool mSoundPool;
     int sample1, sample2, sample3, sample4 = -1;
 
-
     // Game logic variable declarations
     private Handler mHandler;
     int difficultyLevel = 1;
@@ -48,6 +48,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     int playerResponses;
     int playerScore;
     boolean isResponding;
+
+    // High score declarations
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+    String dataName = "MyData";
+    String intName = "MyInt";
+    int defaultInt = 0;
+    int hiScore;
 
     @Override
     protected void onCreate(Bundle savedInstantState) {
