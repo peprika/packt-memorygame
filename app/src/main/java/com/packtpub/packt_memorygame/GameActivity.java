@@ -79,6 +79,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mButton4.setOnClickListener(this);
         mReplayButton.setOnClickListener(this);
 
+        // Initializations for high scores
+        prefs = SharedPreferences(dataName, MODE_PRIVATE);
+        editor = prefs.edit();
+        hiScore = prefs.getInt(intName, defaultInt);
+
         // Sound Effects
         // Make the soundpool according to build version
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
