@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.Random;
@@ -80,7 +81,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mReplayButton.setOnClickListener(this);
 
         // Initializations for high scores
-        prefs = SharedPreferences(dataName, MODE_PRIVATE);
+        prefs = getSharedPreferences(dataName, MODE_PRIVATE);
         editor = prefs.edit();
         hiScore = prefs.getInt(intName, defaultInt);
 
@@ -238,6 +239,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             } else {
                     mTextWatchGo.setText("FAILED!");
                     isResponding = false;
+
+                    // Save the high score
+                    if(playerScore > hiScore) {
+                        hiScore = playerScore;
+                        editor.putInt(intName, hiScore);
+                        editor.commit();
+                        Toast.makeText(getApplicationContext(),
+                                       "New Hi-score",
+                                        Toast.LENGTH_LONG)
+                                        .show();
+                    }
                 }
             }
         }
