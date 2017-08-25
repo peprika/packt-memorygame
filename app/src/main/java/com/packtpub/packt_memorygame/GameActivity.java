@@ -189,6 +189,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                     checkElement(4);
                     break;
                 case R.id.replayButton:
+                    mButton1.setClickable(true);
+                    mButton2.setClickable(true);
+                    mButton3.setClickable(true);
+                    mButton4.setClickable(true);
                     difficultyLevel = 3;
                     playerScore = 0;
                     mScoreTitle.setText("Score: " + playerScore);
@@ -249,6 +253,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             } else {
                     mTextWatchGo.setText("FAILED!");
                     isResponding = false;
+
+                    mButton1.setClickable(false);
+                    mButton2.setClickable(false);
+                    mButton3.setClickable(false);
+                    mButton4.setClickable(false);
 
                     // Save the high score
                     if(playerScore > hiScore) {
