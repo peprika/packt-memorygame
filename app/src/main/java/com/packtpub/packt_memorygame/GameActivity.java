@@ -127,29 +127,20 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 super.handleMessage(msg);
 
                 if (playSequence) {
-                    //mButton1.setVisibility(View.VISIBLE);
-                    //mButton2.setVisibility(View.VISIBLE);
-                    //mButton3.setVisibility(View.VISIBLE);
-                    //mButton4.setVisibility(View.VISIBLE);
-
                     switch (sequenceToCopy[elementToPlay]) {
                         case 1:
-                            //mButton1.setVisibility(View.INVISIBLE);
                             mButton1.startAnimation(wobble);
                             mSoundPool.play(sample1, 1, 1, 0, 0, 1);
                             break;
                         case 2:
-                            //mButton2.setVisibility(View.INVISIBLE);
                             mButton2.startAnimation(wobble);
                             mSoundPool.play(sample1, 1, 1, 0, 0, 1);
                             break;
                         case 3:
-                            //mButton3.setVisibility(View.INVISIBLE);
                             mButton3.startAnimation(wobble);
                             mSoundPool.play(sample1, 1, 1, 0, 0, 1);
                             break;
                         case 4:
-                            //mButton4.setVisibility(View.INVISIBLE);
                             mButton4.startAnimation(wobble);
                             mSoundPool.play(sample1, 1, 1, 0, 0, 1);
                             break;
@@ -227,10 +218,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     // For finishing the thread
     public void sequenceFinished() {
         playSequence = false;
-        //mButton1.setVisibility(View.VISIBLE);
-        //mButton2.setVisibility(View.VISIBLE);
-        //mButton3.setVisibility(View.VISIBLE);
-        //mButton4.setVisibility(View.VISIBLE);
         mTextWatchGo.setText(getResources().getString(R.string.go));
         isResponding = true;
     }
